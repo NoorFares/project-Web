@@ -51,3 +51,32 @@ setTimeout(() => {
     return CHOICES[rand];
   }
   
+  function displayResults(results) {
+    resultDivs.forEach((resultDiv, idx) => {
+      setTimeout(() => {
+        resultDiv.innerHTML = `
+          <div class="choice ${results[idx].name}">
+            <img src="icon-${results[idx].name}.svg" alt="${results[idx].name}" />
+          </div>
+        `;
+      }, idx * 1000);
+    });
+  
+    gameDiv.classList.toggle("hidden");
+    resultsDiv.classList.toggle("hidden");
+  }
+  
+  playAgainBtn.addEventListener("click", () => {
+    gameDiv.classList.toggle("hidden");
+    resultsDiv.classList.toggle("hidden");
+  
+    resultDivs.forEach((resultDiv) => {
+      resultDiv.innerHTML = "";
+      resultDiv.classList.remove("winner");
+    });
+  
+    resultText.innerText = "";
+    resultWinner.classList.toggle("hidden");
+    resultsDiv.classList.toggle("show-winner");
+  });
+  
