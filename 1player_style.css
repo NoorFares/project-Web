@@ -204,7 +204,25 @@ body {
 .results__result:last-of-type {
   grid-area: ai-picked;
 }
+.play-again {
+  border: 1px solid hsl(217, 16%, 45%);
+  padding: 5px 25px;
+  border-radius: 5px;
 
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(to left, transparent 50%, #fff 50%);
+  background-size: 250% 100%;
+  background-position: right bottom;
+  transition: background-position .3s ease-out, color .3s ease-out;
+  text-transform: uppercase;
+
+}
+
+.play-again:hover {
+  background-position: left bottom;
+  color: hsl(214, 47%, 23%);
+}
 .results.show-winner {
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
