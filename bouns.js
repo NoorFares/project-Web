@@ -15,6 +15,7 @@ function game() {
     let currentScore = null;
 
     window.addEventListener('load', () => {
+      //  retrieveScoreFromLocalStorage();
     
         document.querySelectorAll('.user-choice .game-card').forEach(card => {
             card.addEventListener('click', (ev) => {
@@ -52,7 +53,8 @@ function game() {
     function calculateWinner(user, comp) {
         if (user === comp) {
             resultTitleElement.innerText = 'Tie';
-        } else if (getUserWinsStatus(user + comp)) {
+        } 
+        else if (getUserWinsStatus(user + comp)) {
             resultTitleElement.innerText = 'You win';
             calculateScore(1);
         } else {
@@ -71,8 +73,7 @@ function game() {
         el.innerHTML = `<img src="icon-${className}.svg" alt="${className}">`;
         if (isItUserElement) {
             userPickElement.append(el);
-        } 
-        else {
+        } else {
             pcPickElement.append(el);
         }
     }
