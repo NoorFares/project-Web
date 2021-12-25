@@ -1,1 +1,88 @@
-/**/
+
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+  
+  html {
+      height: 100%;
+   }
+   
+  img {
+      max-width: 100%;
+  }
+  
+  body {
+      margin: 0;
+      padding: 45px 5px 5px;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #fff;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  }
+  
+  .main-container {
+      align-items: center;
+  }
+  
+  
+  
+  .flex-row {
+      display: flex;
+      flex-flow: row nowrap;
+  }
+  
+  .flex-column {
+      display: flex;
+      flex-flow: column nowrap;
+  }
+  
+   /* Title block */
+  
+   .title-block {
+       justify-content: space-between;
+       width: 100%;
+       max-width: 700px;
+       border: 2px solid hsl(217, 16%, 45%);
+       border-radius: 15px;
+       padding: 17px 22px 16px 31px;
+       margin: 0 0 47px;
+   }
+  
+   .title-block ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 28px;
+      line-height: 0.8;
+      margin: 2px 0 0;
+   }
+  
+   .score {
+      background: #ffffff;
+      width: 150px;
+      border-radius: 10px;
+      align-items: center;
+      height: 115px;
+      padding: 14px 0 0;
+   }
+  
+   .score-title {
+       color: hsl(229, 64%, 46%);
+       font-size: 20px;
+       font-weight: 700;
+       margin: 0 0 2px;
+       letter-spacing: 1px;
+   }
+  
+   .score-count {
+      color: hsl(229, 25%, 31%);
+      font-size: 63px;
+      line-height: .9;
+      font-weight: 700;
+   }
