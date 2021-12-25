@@ -1,3 +1,5 @@
+
+
 function game() {
     const actions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     const userWinResults = ['scissorspaper', 'paperrock', 'rocklizard', 'lizardspock', 'spockscissors',
@@ -15,7 +17,6 @@ function game() {
     let currentScore = null;
 
     window.addEventListener('load', () => {
-      //  retrieveScoreFromLocalStorage();
     
         document.querySelectorAll('.user-choice .game-card').forEach(card => {
             card.addEventListener('click', (ev) => {
