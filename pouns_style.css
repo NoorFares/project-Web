@@ -86,3 +86,119 @@
       line-height: .9;
       font-weight: 700;
    }
+    /* User choice */
+
+ .user-choice {
+    background: center / contain no-repeat url(bg-pentagon.svg);
+    background-size: 340px;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    height: 467px;
+}
+
+.game-card {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 145px;
+   height: 150px;
+   border-radius: 50%;
+   position: relative;
+   cursor: pointer;
+   position: absolute;   
+}
+
+.game-card img {
+    position: relative;
+    z-index: 2;
+}
+
+.game-card:before {
+    content: '';
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    box-shadow: inset 0 3px 5px hsl(229, 25%, 31%);
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: 1;
+    transition: background-postion .3s ease, box-shadow .3s ease;
+}
+
+.game-card:hover:before {
+   background: rgba(255, 255, 255, 0);
+   box-shadow: none;
+}
+
+.game-card.scissors {
+   background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+   box-shadow: 0px 6px 0px 0px hsl(28, 75%, 44%);
+   top: 0;
+   left: 278px;
+}
+
+.game-card.paper {
+   background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+   box-shadow: 0px 6px 0px 0px hsl(229, 62%, 34%);
+   top: 130px;
+   right: 115px;
+}
+
+.game-card.rock {
+   background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+   box-shadow: 0px 6px 0px 0px hsl(343, 70%, 30%);
+   bottom: 0;
+   right: 178px;
+}
+
+.game-card.lizard {
+   background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+   box-shadow: 0px 6px 0px 0px hsl(259, 48%, 38%);
+   bottom: 0;
+   left: 180px;
+}
+
+.game-card.spock {
+   background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+   box-shadow: 0px 6px 0px 0px hsl(197, 54%, 36%);
+   top: 130px;
+   left: 115px;
+}
+
+/* Picked section */
+
+.picked {
+   align-items: center;
+justify-content: space-between;
+   width: 100%;
+   text-align: center;
+   padding: 30px 10px;
+}
+
+.picked p {
+   font-size: 23px;
+   line-height: 1;
+   margin: 0 0 66px;
+}
+
+.picked .game-card {
+   position: static;
+   height: 300px;
+   width: 295px;
+}
+
+.picked .game-card:before {
+   width: 230px;
+   height: 221px;
+}
+
+.picked .game-card img {
+   width: 100px;
+}
+
+.choice {
+   width: 50%;
+   height: 100%;
+   align-items: center;
+}
