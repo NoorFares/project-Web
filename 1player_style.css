@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
 
+body.light {
+    --img-bg: url("bg-desktop-light.jpeg");
+    --clr-primary: hsl(243, 12%, 30%);
+    --clr-page-bg: hsl(0, 0%, 98%);
+    --clr-card-bg: hsl(0, 0%, 100%);
+    --clr-gb-1: hsl(240, 8%, 24%);
+    --clr-gb-2: hsl(243, 12%, 30%);
+    --clr-gb-3: hsl(252, 6%, 83%);
+    --clr-gb-4: hsl(237, 10%, 64%);
+    --clr-gb-5: hsl(252, 9%, 73%);
+    --clr-gb-6: hsl(252, 21%, 94%);
+  }
 /* Variables */
 :root {
 --light-text: #ffffff;
@@ -78,6 +90,7 @@ body {
   font-weight: 700;
   color: var(--dark-text);
 }
+
 /* Game */
 .game {
   position: relative;
@@ -204,30 +217,26 @@ body {
 .results__result:last-of-type {
   grid-area: ai-picked;
 }
-.play-again {
-  border: 1px solid hsl(217, 16%, 45%);
-  padding: 5px 25px;
-  border-radius: 5px;
 
-  cursor: pointer;
-  color: #fff;
-  background: linear-gradient(to left, transparent 50%, #fff 50%);
-  background-size: 250% 100%;
-  background-position: right bottom;
-  transition: background-position .3s ease-out, color .3s ease-out;
-  text-transform: uppercase;
-
-}
-
-.play-again:hover {
-  background-position: left bottom;
-  color: hsl(214, 47%, 23%);
-}
 .results.show-winner {
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
     "you-title . ai-title"
     "you-picked result-winner ai-picked";
+}
+
+.winner .choice::after {
+  box-shadow: 0 0 0 40px #293251, 0 0 0 80px #232c4b, 0 0 0 130px #1e2949;
+  animation: winner 1s ease forwards;
+}
+
+@keyframes winner {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .results__winner {
@@ -238,4 +247,99 @@ body {
 .results__text {
   font-size: 3.5rem;
   padding-bottom: 1.5rem;
+}
+.play-again {
+   border: 1px solid hsl(217, 16%, 45%);
+   padding: 5px 25px;
+   border-radius: 5px;
+ 
+   cursor: pointer;
+   color: #fff;
+   background: linear-gradient(to left, transparent 50%, #fff 50%);
+   background-size: 250% 100%;
+   background-position: right bottom;
+   transition: background-position .3s ease-out, color .3s ease-out;
+   text-transform: uppercase;
+
+}
+
+.play-again:hover {
+   background-position: left bottom;
+   color: hsl(214, 47%, 23%);
+}
+
+
+.rules-btn {
+    border: 1px solid hsl(217, 16%, 45%);
+    padding: 5px 25px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to left, transparent 50%, #fff 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: background-position .3s ease-out, color .3s ease-out;
+    text-transform: uppercase;
+ 
+ }
+ 
+ .rules-btn:hover {
+    background-position: left bottom;
+    color: hsl(214, 47%, 23%);
+ }
+ 
+ 
+
+/* Rules Modal */
+.modal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background: var(--shadow-med);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+.modal__container {
+  background: #fff;
+  border-radius: 0.5rem;
+}
+.modal__header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2rem 2rem 1rem;
+}
+.modal__heading {
+  font-size: 1.5rem;
+  color: var(--dark-text);
+}
+.close-btn {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.rules-img {
+  padding: 2rem 4rem;
+}
+.show-modal {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+
+.preload * {
+  transition: none;
+}
+
+.hidden {
+  display: none;
 }
