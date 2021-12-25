@@ -34,4 +34,16 @@ function game() {
     
     function getComputerChoice() {
         return actions[Math.floor(Math.random() * 5)];
-    }}
+
+    }
+    function buildChoiceElement(isItUserElement, className) {
+        const el = document.createElement('div');
+        el.classList = [`game-card ${className}`];
+        el.innerHTML = `<img src="icon-${className}.svg" alt="${className}">`;
+        if (isItUserElement) {
+            userPickElement.append(el);
+        } else {
+            pcPickElement.append(el);
+        }
+    }
+}
