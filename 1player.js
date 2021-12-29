@@ -44,12 +44,12 @@ choiceButtons.forEach((button) => {
 });
 
 function choose(choice) {
-  const aichoice = aiChoose();
-  displayResults([choice, aichoice]);
-  displayWinner([choice, aichoice]);
+  const computerchoice = computerChoose();
+  displayResults([choice, computerchoice]);
+  displayWinner([choice, computerchoice]);
 }
 
-function aiChoose() {
+function computerChoose() {
   const rand = Math.floor(Math.random() * CHOICES.length);
   return CHOICES[rand];
 }
